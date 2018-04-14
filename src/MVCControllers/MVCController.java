@@ -2,7 +2,7 @@ package MVCControllers;
 
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+//import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -19,7 +19,7 @@ public class MVCController {
 	
 	@RequestMapping(value="/pros",method=RequestMethod.GET)
 	public ModelAndView product() {
-		return new ModelAndView("products");
+		return new ModelAndView("products.jsp");
 		
 	}
 	   @RequestMapping("/home")
