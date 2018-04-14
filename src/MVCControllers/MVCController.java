@@ -1,26 +1,33 @@
 package MVCControllers;
 
-import org.apache.http.HttpRequest;
-import org.apache.http.client.HttpResponseException;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
-
 public class MVCController {
 	
-	@RequestMapping(value="/home",method=RequestMethod.GET)
-	public String homePage() {
-		return "store";
+	@RequestMapping(value="/homefirst",method=RequestMethod.GET)
+	public ModelAndView homePage() {
+		return new ModelAndView("store.jsp");
 		
 	}
 	
 	@RequestMapping(value="/pros",method=RequestMethod.GET)
-	public String product() {
-		return "products";
+	public ModelAndView product() {
+		return new ModelAndView("products");
 		
 	}
+	   @RequestMapping("/home")
+	    public String greeting() {
+		   
+	        //model.addAttribute("name", name);
+	        return "redirect:/index.html";
+	    }
+
 
 }
